@@ -1,0 +1,129 @@
+<ZeroButton@Button>:
+#    background_normal: ''
+    background_color: app.theme_cls.primary_dark
+    on_release: self.parent.parent.ids.calc_input.text += self.text
+    size_hint: None, None
+    font_size: self.parent.parent.button_font_size
+    width: self.parent.parent.button_width
+    height: self.parent.parent.button_height * 2
+<NumberButton@Button>:
+#    background_normal: ''
+    background_color: app.theme_cls.primary_light
+    on_release: self.parent.parent.ids.calc_input.text += self.text
+    size_hint: None, None
+    font_size: self.parent.parent.button_font_size
+    width: self.parent.parent.button_width
+    height: self.parent.parent.button_height
+<SpecialButton@Button>:
+
+#    background_normal: ''
+    background_color: app.theme_cls.primary_light
+    size_hint: None, None
+    font_size: self.parent.parent.button_font_size / 2
+    width: self.parent.parent.button_width
+    height: self.parent.parent.button_height
+#    background_color: [0, 0, 1, 1]
+<ClearButton@Button>:
+#    background_normal: ''
+    background_color: app.theme_cls.primary_color
+    size_hint: None, None
+    font_size: self.parent.parent.button_font_size / 2
+    width: self.parent.parent.button_width
+    height: self.parent.parent.button_height * 2
+
+
+<RowLayout@BoxLayout>:
+    size_hint: None, None
+
+<ConverterWidget>:
+    rows: 6
+
+    RowLayout:
+        TextInput:
+            background_color: app.theme_cls.primary_color
+            foreground_color: [1, 1, 1, 1]
+            id: calc_input
+            font_size: 110
+            size_hint: None, None
+            height: root.button_height * 1.2
+            width: root.button_width * 5
+            readonly: True
+            multiline: False
+
+    RowLayout:
+#        SpecialButton:
+#            background_color: [0, 0.5, 0, 1]
+#            text: 'Eulers'
+#            on_release: self.parent.parent.euler()
+#
+#        SpecialButton:
+#            background_color: [0, 0.7, 0, 1]
+#            text: 'PopUp error'
+#            on_release: self.parent.parent.calc_error()
+
+
+
+
+
+
+        SpecialButton:
+#            background_color: [0, 0.9, 0, 1]
+            text: 'C to F'
+            on_release: self.parent.parent.c_to_f()
+
+
+        SpecialButton:
+#            background_color: [0, 0.9, 0, 1]
+            text: 'Foot to Cm'
+            on_release: self.parent.parent.foot_to_cm()
+
+        SpecialButton:
+#            background_color: [0, 0.9, 0, 1]
+            text: 'Gal to Lit'
+            on_release: self.parent.parent.gal_to_lit()
+    RowLayout:
+        SpecialButton:
+#            background_color: [0, 0.9, 0, 1]
+            text: 'In to Cm'
+            on_release: self.parent.parent.in_to_cm()
+
+        SpecialButton:
+#            background_color: [0, 0.9, 0, 1]
+            text: 'Mph to Kmh'
+            on_release: self.parent.parent.mph_to_kmh()
+        SpecialButton:
+#            background_color: [0, 0.9, 0, 1]
+            text: 'Oz to gr'
+            on_release: self.parent.parent.oz_to_gr()
+        ClearButton:
+#            background_color: [1, 0.1, 0, 1]
+            text: 'Clear'
+            on_release: self.parent.parent.clear()
+    RowLayout:
+        NumberButton:
+            text: '1'
+        NumberButton:
+            text: '2'
+        NumberButton:
+            text: '3'
+        NumberButton:
+            text: '.'
+
+    RowLayout:
+        NumberButton:
+            text: '4'
+        NumberButton:
+            text: '5'
+        NumberButton:
+            text: '6'
+
+    RowLayout:
+        NumberButton:
+            text: '7'
+        NumberButton:
+            text: '8'
+        NumberButton:
+            text: '9'
+
+        ZeroButton:
+            text: '0'
